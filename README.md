@@ -1,4 +1,4 @@
-# Challenge-11-Express-Note-Taker
+# Challenge 13 E-commerce Back End
 Hi!
 
 My name is Zac Gilfoyle.
@@ -7,7 +7,7 @@ My name is Zac Gilfoyle.
 This repository contains files for a E-commerce back end utilizing Javascript. This utilizes Postgres in tandem with Sequelize to create a database which we are capable of fetching information from through Express. 
 This is a project initilized in the Node.js environment.
 
-Below are videos and links to various requests capable in the back end using Insomnia.
+Below are videos and links to various requests capable in the back end using Insomnia and instantiating the database and server.
 
 ## Intialising the database, seeding the database and starting the server using Node.js
 [start.webm](https://github.com/ZACGIL/Challenge-13-E-commerce-back-end/assets/30303489/a44338c7-c482-426b-b982-d063ea9a0344)
