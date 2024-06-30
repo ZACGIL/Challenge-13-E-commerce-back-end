@@ -19,10 +19,10 @@ router.get('/:id', async (req, res) => {
   try {
     // find a single tag by its `id`
     // be sure to include its associated Product data
-    const idTag = await Category.findByPk(req.params.id, { include: [{ model: Product, through: ProductTag }] });
+    const idTag = await Tag.findByPk(req.params.id, { include: [{ model: Product, through: ProductTag }] });
     res.status(200).json(idTag);
   } catch (err) {
-    res.status(500).send("Error retrieving tags!");
+    res.status(500).send("Error retrieving tags!", err);
   }
 });
 
@@ -37,13 +37,16 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update(req.body, {
+  await Tag.update(req.body, {
     where: {
       id: req.params.id,
     },
   })
+    .then((update) => {
+      res.status(200).json(update);
+    })
     .catch((err) => {
       res.status(400).json(err);
     });
